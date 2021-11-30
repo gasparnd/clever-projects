@@ -22,7 +22,7 @@ const projects: Record<IProjectId, IProject> = {
       "GCP",
       "Nest.js",
     ],
-    team: [1, 2, 3, 4],
+    team: [1, 2, 3, 4, 5, 6],
   },
   2: {
     name: "Nodrize",
@@ -37,7 +37,7 @@ const projects: Record<IProjectId, IProject> = {
     companyName: "CleverIt Group",
     companyUrl: "https://www.cleveritgroup.com/",
     stack: ["React", "Next.js", "React Native", "GraphQL", "GCP", "Nest.js"],
-    team: [2, 3],
+    team: [2, 3, 6, 4, 6],
   },
   3: {
     name: "Fodture",
@@ -52,7 +52,7 @@ const projects: Record<IProjectId, IProject> = {
     companyName: "CleverIt Group",
     companyUrl: "https://www.cleveritgroup.com/",
     stack: ["React", "Next.js", "React Native", "GraphQL", "GCP", "Nest.js"],
-    team: [1, 2, 4],
+    team: [1, 2, 4, 5, 6],
   },
   4: {
     name: "Clever Coins",
@@ -67,7 +67,7 @@ const projects: Record<IProjectId, IProject> = {
     companyName: "CleverIt Group",
     companyUrl: "https://www.cleveritgroup.com/",
     stack: ["React", "Next.js", "GraphQL", "GCP", "Nest.js"],
-    team: [2, 4],
+    team: [2, 4, 5, 6],
   },
   5: {
     name: "Cleverpoly",
@@ -82,7 +82,7 @@ const projects: Record<IProjectId, IProject> = {
     companyName: "CleverIt Group",
     companyUrl: "https://www.cleveritgroup.com/",
     stack: ["React", "Next.js", "GraphQL", "GCP", "Nest.js"],
-    team: [1, 4],
+    team: [1, 4, 3],
   },
   6: {
     name: "Sprintmailing",
@@ -97,7 +97,7 @@ const projects: Record<IProjectId, IProject> = {
     companyName: "CleverIt Group",
     companyUrl: "https://www.cleveritgroup.com/",
     stack: ["React", "Next.js", "GraphQL", "GCP", "Nest.js"],
-    team: [2, 4],
+    team: [2, 4, 1, 6],
   },
 };
 

@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { IWorker } from "../../constants/types";
 
-const WorkerModal = (props: IWorker) => {
+export const WorkerModal = (props: IWorker) => {
   const { name, lastName, jobTitle, id } = props;
   return (
     <div className="px-4 py-8">
@@ -13,7 +13,7 @@ const WorkerModal = (props: IWorker) => {
         <p className="text-gray-600">{jobTitle}</p>
       </div>
       <div className="flex justify-end mt-4">
-        <Link href={`worker/${id}`}>
+        <Link href={`/worker/${id}`}>
           <a className="text-white p-1 bg-primary border rounded-lg">
             See full profile
           </a>
@@ -22,5 +22,3 @@ const WorkerModal = (props: IWorker) => {
     </div>
   );
 };
-
-export default WorkerModal;

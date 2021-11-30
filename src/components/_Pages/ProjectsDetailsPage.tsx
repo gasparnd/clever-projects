@@ -4,10 +4,9 @@ import { useRouter } from "next/router";
 import { IProject, IWorker } from "../../constants/types";
 import { getProject, getWorkers } from "../../api";
 import { Tag } from "../Tag";
-import { Avatar } from "@nextui-org/react";
 import { WorkerCard } from "../WorkerCard";
 import { Modal } from "../Modal";
-import WorkerModal from "../Modal/WorkerModal";
+import { WorkerModal } from "../Modal/WorkerModal";
 
 export const ProjectsDetailsPage = (props: IProject) => {
   const router = useRouter();

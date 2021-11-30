@@ -18,12 +18,12 @@ export type IWorkerId = number;
 
 export interface IWorker {
   id: number;
-  sku: string;
   name: string;
   lastName: string;
+  description: string;
   jobTitle: string;
   stack: string[];
-  projects: string[];
+  projects: number[];
   linkedIn: string;
 }
 
