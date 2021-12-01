@@ -8,6 +8,7 @@ module.exports = {
     width: {
       mw: "300px",
       "80%": "80%",
+      "1/2": "50%",
     },
     extend: {
       colors: {
