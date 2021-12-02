@@ -5,7 +5,8 @@ import { IProject } from "../../constants/types";
 
 export const ProjectCard = (props: IProject) => {
   const { name, image, description, url, id } = props;
-  const descriptionText: string = description.substr(0, 90) + "\u2026";
+  const descriptionText: string =
+    description.description.substr(0, 90) + "\u2026";
   return (
     <article className="w-full sm:w-mw transition duration-500 ease-in-out transform md:hover:-translate-y-1 md:hover:scale-105 overflow-hidden">
       <Link href={`project/${id}`}>

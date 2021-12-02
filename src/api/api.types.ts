@@ -1,7 +1,7 @@
 export interface IProject {
   id: number;
   name: string;
-  description: string;
+  description: IProjectDescription;
   companyName: string;
   companyUrl: string;
   image: string;
@@ -10,6 +10,13 @@ export interface IProject {
   sku: string;
   team: number[];
   status: TStatus;
+}
+
+interface IProjectDescription {
+  description: string;
+  objective: string;
+  challenge: string;
+  solution: string;
 }
 
 export type IProjectId = number;

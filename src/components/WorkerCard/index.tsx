@@ -13,7 +13,7 @@ export const WorkerCard = (props: IProps) => {
   return (
     <article
       onClick={() => onClick()}
-      className="cursor-pointer mr-4 my-3 flex flex-col items-center"
+      className="w-max cursor-pointer mr-4 my-3 flex flex-col items-center sm:mr-16 transition duration-500 ease-in-out transform md:hover:-translate-y-1 md:hover:scale-105"
     >
       <Avatar
         pointer
