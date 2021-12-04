@@ -2,6 +2,11 @@ module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    width: {
+      mw: "300px",
+      "80%": "80%",
+      "1/2": "50%",
+    },
     extend: {
       colors: {
         primary: "#6a35ff",
@@ -10,11 +15,6 @@ module.exports = {
       },
       height: {
         mh: "33.3%",
-      },
-      width: {
-        mw: "300px",
-        "80%": "80%",
-        "1/2": "50%",
       },
     },
     screens: {

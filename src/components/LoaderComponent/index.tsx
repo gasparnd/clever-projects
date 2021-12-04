@@ -1,5 +1,5 @@
+import React, { useContext } from "react";
 import { Progress } from "@nextui-org/react";
-import React from "react";
 
 export const LoaderComponent = () => {
   return (

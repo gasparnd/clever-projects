@@ -1,28 +1,20 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { useRouter } from "next/router";
 import { IProject, IWorker } from "../../constants/types";
-import { getProject, getWorkers } from "../../api";
+import { getWorkers } from "../../api";
 import { Tag } from "../Tag";
 import { WorkerCard } from "../WorkerCard";
 import { Modal } from "../Modal";
 import { WorkerModal } from "../Modal/WorkerModal";
 
 export const ProjectsDetailsPage = (props: IProject) => {
-  const router = useRouter();
-  const { id } = router.query;
-
   const [project, setProject] = useState<IProject>(null);
   const [workers, setWorkers] = useState<IWorker[]>([]);
   const [temporalWorker, setTemporalWorker] = useState<IWorker>();
   const [visibleModal, setVisibleModal] = useState<boolean>(false);
 
   useEffect(() => {
-    if (!props) {
-      getProject(Number(id)).then(({ data }) => setProject(data));
-    } else {
-      setProject(props);
-    }
+    setProject(props);
   }, []);
 
   useEffect(() => {
