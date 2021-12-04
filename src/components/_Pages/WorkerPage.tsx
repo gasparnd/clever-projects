@@ -1,20 +1,17 @@
 import { Avatar } from "@nextui-org/react";
-import { useRouter } from "next/router";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { getWorker, getWorkerList } from "../../api";
+import { getWorkerList } from "../../api";
 import { IProject, IWorker } from "../../constants/types";
 import { Header } from "../Header";
 import { Tag } from "../Tag";
 import { FaLinkedinIn } from "react-icons/fa";
 
-export const WorkerPage = () => {
-  const router = useRouter();
-  const { id } = router.query;
+export const WorkerPage = (props: IWorker) => {
   const [worker, setWorker] = useState<IWorker>();
   const [workerPeojects, setWorkerPeojects] = useState<IProject[]>([]);
   useEffect(() => {
-    getWorker(Number(id)).then(({ data }) => setWorker(data));
+    setWorker(props);
   }, []);
 
   useEffect(() => {
