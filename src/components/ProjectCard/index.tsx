@@ -11,7 +11,7 @@ export const ProjectCard = (props: IProject) => {
     <article className="w-full sm:w-mw transition duration-500 ease-in-out transform md:hover:-translate-y-1 md:hover:scale-105 overflow-hidden">
       <Link href={`project/${id}`}>
         <a>
-          <figure className="overflow-hidden bg-primary bg-opacity-25 border border-transparent h-auto rounded-t-lg">
+          <figure className="overflow-hidden bg-primary bg-opacity-25 h-auto rounded-t-lg">
             <Image
               objectFit="cover"
               src={image}
@@ -29,7 +29,7 @@ export const ProjectCard = (props: IProject) => {
             See
           </a>
         </div>
-        <p className="h-1">{descriptionText}</p>
+        <p className="text-gray-700">{descriptionText}</p>
       </section>
     </article>
   );
