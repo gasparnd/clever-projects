@@ -10,13 +10,17 @@ import { FaLinkedinIn } from "react-icons/fa";
 export const WorkerPage = (props: IWorker) => {
   const [worker, setWorker] = useState<IWorker>();
   const [workerPeojects, setWorkerPeojects] = useState<IProject[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
   useEffect(() => {
     setWorker(props);
   }, []);
 
   useEffect(() => {
     if (worker) {
-      getWorkerList(worker.projects).then((data) => setWorkerPeojects(data));
+      getWorkerList(worker.projects).then((data) => {
+        setWorkerPeojects(data);
+        setLoading(false);
+      });
     }
   }, [worker]);
   return (
@@ -66,13 +70,19 @@ export const WorkerPage = (props: IWorker) => {
           <section className="mt-8">
             <h3 className="text-4xl text-black font-bold">Projects:</h3>
             <div className="border-2 border-primary rounded-lg p-4 mt-4 flex flex-wrap">
-              {workerPeojects.map((project) => (
-                <Link key={project.id} href={`/project/${project.id}`}>
-                  <a>
-                    <Tag>{project.name}</Tag>
-                  </a>
-                </Link>
-              ))}
+              {loading ? (
+                [1, 2, 3, 4, 5].map((el) => <Tag key={el} loading={loading} />)
+              ) : (
+                <>
+                  {workerPeojects.map((project) => (
+                    <Link key={project.id} href={`/project/${project.id}`}>
+                      <a>
+                        <Tag loading={loading}>{project.name}</Tag>
+                      </a>
+                    </Link>
+                  ))}
+                </>
+              )}
             </div>
           </section>
         </Header>

@@ -7,9 +7,14 @@ import { ProjectCard } from "../ProjectCard";
 
 const HomePage = () => {
   const [projects, setProjects] = useState<IProject[]>();
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    getProjects().then(({ data }) => setProjects(data));
+    setLoading(true);
+    getProjects().then(({ data }) => {
+      setProjects(data);
+      setLoading(false);
+    });
   }, []);
 
   return (
@@ -21,15 +26,23 @@ const HomePage = () => {
         We invite you to see the work of the Clevers
       </p>
       <div className="mt-16">
-        {projects && (
-          <GridComponent>
-            {projects.map((project) => (
-              <Grid key={project.id}>
-                <ProjectCard {...project} />
+        <GridComponent>
+          {loading ? (
+            [1, 2, 3, 4, 5, 6].map((el) => (
+              <Grid key={el}>
+                <ProjectCard loading={loading} />
               </Grid>
-            ))}
-          </GridComponent>
-        )}
+            ))
+          ) : (
+            <>
+              {projects.map((project) => (
+                <Grid key={project.id}>
+                  <ProjectCard loading={loading} project={project} />
+                </Grid>
+              ))}
+            </>
+          )}
+        </GridComponent>
       </div>
     </React.Fragment>
   );
