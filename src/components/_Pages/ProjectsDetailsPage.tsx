@@ -65,7 +65,7 @@ export const ProjectsDetailsPage = (props: IProject) => {
       </section>
       <section>
         <div className="bg-primary rounded-lg py-4 px-1">
-          <div className="lg:flex">
+          <div className="lg:flex items-center">
             <figure className="w-full lg:w-1/2 mr-3">
               <Image
                 className="rounded-lg"
