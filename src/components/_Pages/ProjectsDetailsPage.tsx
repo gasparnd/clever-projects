@@ -12,6 +12,7 @@ export const ProjectsDetailsPage = (props: IProject) => {
   const [workers, setWorkers] = useState<IWorker[]>([]);
   const [temporalWorker, setTemporalWorker] = useState<IWorker>();
   const [visibleModal, setVisibleModal] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     setProject(props);
@@ -19,7 +20,11 @@ export const ProjectsDetailsPage = (props: IProject) => {
 
   useEffect(() => {
     if (project) {
-      getWorkers(project.team).then((data) => setWorkers(data));
+      setLoading(true);
+      getWorkers(project.team).then((data) => {
+        setWorkers(data);
+        setLoading(false);
+      });
     }
   }, [project]);
 
@@ -54,7 +59,7 @@ export const ProjectsDetailsPage = (props: IProject) => {
               </span>
             </div>
           </div>
-          <p className="text 2xl font-bold text-black">
+          <p className="text 2xl text-black">
             Product for{" "}
             <a
               className="underline text-2xl text-black"
@@ -128,15 +133,23 @@ export const ProjectsDetailsPage = (props: IProject) => {
       <section className="mt-8">
         <h3 className="text-4xl text-black font-bold">Team:</h3>
         <div className="border-2 border-primary rounded-lg p-4 mt-4 flex flex-wrap">
-          {workers.map((worker) => (
-            <WorkerCard
-              onClick={() => {
-                showModal(worker);
-              }}
-              key={worker.id}
-              data={worker}
-            />
-          ))}
+          {loading
+            ? [1, 2, 3, 4, 5].map((el) => (
+                <div
+                  style={{ width: 70, height: 70 }}
+                  className="border rounded-full bg-gray-400 border-gray-400 mr-8"
+                  key={el}
+                />
+              ))
+            : workers.map((worker) => (
+                <WorkerCard
+                  onClick={() => {
+                    showModal(worker);
+                  }}
+                  key={worker.id}
+                  data={worker}
+                />
+              ))}
         </div>
       </section>
       <Modal visible={visibleModal} closeHandler={() => setVisibleModal(false)}>
