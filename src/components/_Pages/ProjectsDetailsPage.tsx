@@ -41,26 +41,36 @@ export const ProjectsDetailsPage = (props: IProject) => {
   return (
     <React.Fragment>
       <section className="flex flex-col items-center">
-        <div className="flex justify-center mb-4">
-          <div>
+        <div className="mb-8">
+          <div className="flex">
             <h1 className="text-2xl sm:text-3xl md:text-4xl xl:text-6xl text-black text-center font-bold mb-1">
               {project?.name}
             </h1>
+            <div>
+              <span
+                className={`${statusBgColor} text-gray-100 p-1 rounded-md text-sm`}
+              >
+                {project.status}
+              </span>
+            </div>
+          </div>
+          <p className="text 2xl font-bold text-black">
+            Product for{" "}
             <a
-              className="underline text-xl text-gray-700"
+              className="underline text-2xl text-black"
               target="_blank"
-              href={project.url}
+              href={project.companyUrl}
             >
-              {project.url}
+              {project.companyName}
             </a>
-          </div>
-          <div>
-            <span
-              className={`${statusBgColor} text-gray-100 p-1 rounded-md text-sm`}
-            >
-              {project.status}
-            </span>
-          </div>
+          </p>
+          <a
+            className="underline text-xl text-gray-700"
+            target="_blank"
+            href={project.url}
+          >
+            {project.url}
+          </a>
         </div>
       </section>
       <section>
