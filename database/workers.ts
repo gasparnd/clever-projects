@@ -58,7 +58,7 @@ const workers: Record<IWorkerId, IWorker> = {
     lastName: "Grande",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-    jobTitle: "Data Engeniere",
+    jobTitle: "Data Engineer",
     projects: [1, 2, 3, 4, 5, 6],
     stack: ["Next.js", "React", "Nest.js", "Tailwind", "Express"],
     linkedIn: "https://www.linkedin.com",
@@ -80,7 +80,7 @@ const workers: Record<IWorkerId, IWorker> = {
     lastName: "Agilar",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-    jobTitle: "Data Engeniere",
+    jobTitle: "Data Engineer",
     projects: [1, 3, 4, 2, 6],
     stack: ["Python", "React", "SQL", "PowerBi", "DJango"],
     linkedIn: "https://www.linkedin.com",
