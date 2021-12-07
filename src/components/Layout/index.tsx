@@ -3,11 +3,13 @@ import { NavBar } from "../NavBar";
 
 export const Layout = ({ children }) => {
   return (
-    <div className="h-screen px-4 2xl:flex md:justify-center">
-      <div className="2xl:w-3/4 ">
-        <NavBar />
-        <div>{children}</div>
+    <React.Fragment>
+      <div className="h-screen px-4 2xl:flex 2xl:justify-center">
+        <div className=" 2xl:w-1/2">
+          <NavBar />
+          <div>{children}</div>
+        </div>
       </div>
-    </div>
+    </React.Fragment>
   );
 };

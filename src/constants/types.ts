@@ -19,10 +19,6 @@ interface IProjectDescription {
   solution: string;
 }
 
-export type IProjectId = number;
-
-export type IWorkerId = number;
-
 export interface IWorker {
   id: number;
   name: string;
