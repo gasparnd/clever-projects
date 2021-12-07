@@ -12,7 +12,7 @@ export const ProjectsDetailsPage = (props: IProject) => {
   const [workers, setWorkers] = useState<IWorker[]>([]);
   const [temporalWorker, setTemporalWorker] = useState<IWorker>();
   const [visibleModal, setVisibleModal] = useState<boolean>(false);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>();
 
   useEffect(() => {
     setProject(props);

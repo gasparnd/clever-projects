@@ -11,6 +11,7 @@ const ProjectDetails = () => {
   const { id } = router.query;
   const [project, setProject] = useState<IProject>(null);
   const [loading, setLoading] = useState<boolean>(true);
+
   useEffect(() => {
     fetch();
   }, []);
@@ -41,5 +42,11 @@ const ProjectDetails = () => {
     </>
   );
 };
+
+export async function getServerSideProps(context) {
+  return {
+    props: {},
+  };
+}
 
 export default ProjectDetails;

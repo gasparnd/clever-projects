@@ -2,7 +2,7 @@ const apiUrl: string = "/api";
 
 export const getProjects = async () => {
   try {
-    const res = await fetch(`${apiUrl}/projects`);
+    const res = await window.fetch(`${apiUrl}/projects`);
     if (res.status === 200) {
       return res.json();
     }
@@ -13,7 +13,7 @@ export const getProjects = async () => {
 
 export const getProject = async (id: number) => {
   try {
-    const res = await fetch(`${apiUrl}/projects/${id}`);
+    const res = await window.fetch(`${apiUrl}/projects/${id}`);
     if (res.status === 200) {
       return res.json();
     }
@@ -27,7 +27,7 @@ export const getWorkerList = async (projects: number[]) => {
     const promiseUrlArr = projects.map((id) => `${apiUrl}/projects/${id}`);
 
     let jsonArray = await Promise.all(
-      promiseUrlArr.map((url) => fetch(url)),
+      promiseUrlArr.map((url) => window.fetch(url)),
     ).then(async (res) => {
       return Promise.all(res.map(async (data) => await data.json()));
     });
@@ -40,7 +40,7 @@ export const getWorkerList = async (projects: number[]) => {
 
 export const getWorker = async (id: number) => {
   try {
-    const res = await fetch(`${apiUrl}/workers/${id}`);
+    const res = await window.fetch(`${apiUrl}/workers/${id}`);
     if (res.status === 200) {
       return res.json();
     }
@@ -54,7 +54,7 @@ export const getWorkers = async (team: number[]) => {
     const promiseUrlArr = team.map((id) => `${apiUrl}/workers/${id}`);
 
     let jsonArray = await Promise.all(
-      promiseUrlArr.map((url) => fetch(url)),
+      promiseUrlArr.map((url) => window.fetch(url)),
     ).then(async (res) => {
       return Promise.all(res.map(async (data) => await data.json()));
     });

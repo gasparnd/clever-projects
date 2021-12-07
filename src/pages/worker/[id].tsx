@@ -35,4 +35,10 @@ const Worker = () => {
   );
 };
 
+export async function getServerSideProps(context) {
+  return {
+    props: {},
+  };
+}
+
 export default Worker;
