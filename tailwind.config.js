@@ -3,7 +3,7 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     width: {
-      mw: "300px",
+      mw: "289px",
       "80%": "80%",
       "1/2": "50%",
     },
